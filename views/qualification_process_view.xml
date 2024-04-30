@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="qualification_process_form" model="ir.ui.view">
+        <field name="name">qualification.form</field>
+        <field name="model">qualification.process</field>
+        <field name="arch" type="xml">
+            <form string="Qualification">
+                <field name="status" widget="statusbar"
+                    statusbar_visible="draft,ongoing,fail,qualified" />
+                <sheet>
+                    <group>
+                        <field name="target_model" />
+                        <field name="auditor_ids" widget="many2many_avatar_user"/>
+                        <field name="date_start" />
+                        <field name="date_end" />
+                        <field name="result" />
+                        <field name="days_to_expire" />
+                        <field name="remaining_days" />
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="qualification_tree" model="ir.ui.view">
+        <field name="name">qualification.tree</field>
+        <field name="model">qualification.process</field>
+        <field name="arch" type="xml">
+            <tree string="Qualification">
+                <field name="target_model"></field>
+                <field name="create_date"></field>
+                <field name="status"></field>
+                <field name="remaining_days"></field>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_qualification" model="ir.actions.act_window">
+        <field name="name">Qualifications</field>
+        <field name="res_model">qualification.process</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Add new Qualification Process
+            </p>
+        </field>
+    </record>
+    <!-- Menu principal do modulo -->
+    <menuitem name="Qualification" id="qualification_root" sequence="2" />
+
+    <menuitem
+        name="Qualification"
+        id="qualification_menu"
+        parent="qualification_root"
+        sequence="100"
+        action="action_qualification" />
+</odoo>
