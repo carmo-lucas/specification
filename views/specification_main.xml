@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Definition of a view for the form of product specifications -->
+    <record id="spec_sheet_form_view" model="ir.ui.view">
+        <field name="name">spec.sheet.form</field>
+        <field name="model">spec.sheet</field>
+        <field name="arch" type="xml">
+            <form string="Product Specification">
+                <header>
+                    <field name="status" widget="statusbar"
+                        statusbar_visible="draft,validated,canceled" />
+                </header>
+                <sheet>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="product_id" />
+                        </h1>
+                    </div>
+                    <!-- Fields to be displayed in the form -->
+                    <group>
+                        <field name="cas_name" />
+                        <field name="bcs" />
+                        <field name="classe_SNGPC" />
+                        <field name="observations" />
+                    </group>
+                    <notebook>
+                        <page string="Properties">
+                            <!-- Field for a one-to-many relation with 'property_ids' -->
+                            <field name="property_ids" widget="section_and_note_one2many">
+                                <!-- Tree view for 'property_ids' field -->
+                                <!-- Allows adding new rows without opening a form -->
+                                <tree>
+                                    <field name="parameter_id" />
+                                    <field name="operator" />
+                                    <field name="parameter_target_value" />
+                                    <field name="parameter_tolerance_value" />
+                                    <field name="parameter_range_value" decoration-danger="1" />
+                                    <field name="uom_id" />
+                                </tree>
+                                <form>
+                                    <group>
+                                        <field name="parameter_id" />
+                                        <field name="operator" />
+                                    </group>
+                                    <group>
+                                        <field name="parameter_target_value" />
+                                        <field name="parameter_tolerance_value" />
+                                    </group>
+                                    <field name="parameter_range_value" decoration-bf="1" />
+                                    <field name="uom_id" />
+                                </form>
+                            </field>
+                        </page>
+                        <page string="Pharma">
+                            <notebook>
+                                <page string="Pharmacology">
+                                </page>
+                            </notebook>
+                        </page>
+                        <page string="Associations">
+                        </page>
+                    </notebook>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" />
+                    <field name="activity_ids" />
+                    <field name="message_ids" />
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <!-- Definition of a view for the tree view of product specifications -->
+    <record id="spec_sheet_tree_view" model="ir.ui.view">
+        <field name="name">spec.sheet.tree</field>
+        <field name="model">spec.sheet</field>
+        <field name="arch" type="xml">
+            <tree string="Specification Sheet">
+                <!-- Fields to be displayed in the tree view -->
+                <field name="product_id" />
+                <field name="status" />
+            </tree>
+        </field>
+    </record>
+
+    <record id="spec_parameter_tree_view" model="ir.ui.view">
+        <field name="name">spec.parameter.tree</field>
+        <field name="model">spec.parameter</field>
+        <field name="arch" type="xml">
+            <tree string="Parameters">
+                <!-- Fields to be displayed in the tree view -->
+                <field name="name" />
+                <field name="uom_id" />
+                <field name="method" />
+            </tree>
+        </field>
+    </record>
+
+    <!-- Definition of an action for opening the product specification view -->
+    <record id="action_specification" model="ir.actions.act_window">
+        <field name="name">Specifications</field>
+        <field name="res_model">spec.sheet</field>
+        <field name="view_mode">tree,form</field>
+        <!-- Help message to be displayed in the view -->
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Add new product specification
+            </p>
+        </field>
+    </record>
+
+    <!-- Definition of an action for opening the configuration parameters view -->
+    <record id="action_configuration_parameters" model="ir.actions.act_window">
+        <field name="name">Parameters</field>
+        <field name="res_model">spec.parameter</field>
+        <field name="view_mode">tree,form</field>
+        <!-- Help message to be displayed in the view -->
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Configure Specification Parameters
+            </p>
+        </field>
+    </record>
+
+
+
+    <!-- Main menu for the module -->
+    <!-- Level 0 Root Menu Button -->
+    <menuitem name="Specifications" id="specifications_root" sequence="3" />
+
+    <!-- Submenu for opening the product specification view -->
+    <menuitem
+        name="Specification Sheets"
+        id="spec_sheet_menu"
+        parent="specifications_root"
+        sequence="100"
+        action="action_specification" />
+
+    <!-- Submenu for opening the configuration parameters view -->
+    <menuitem
+        name="Configuration"
+        id="spec_configuration_menu"
+        parent="specifications_root"
+        sequence="200" />
+
+    <!-- Sub-submenu for opening the configuration parameters view -->
+    <menuitem
+        name="Parameters"
+        id="spec_configuration_parameters"
+        parent="spec_configuration_menu"
+        action="action_configuration_parameters" />
+
+</odoo>

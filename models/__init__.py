@@ -1,1 +1,1 @@
-from . import qualification
+from . import specification
