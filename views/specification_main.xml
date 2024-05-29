@@ -19,9 +19,6 @@
                     </div>
                     <!-- Fields to be displayed in the form -->
                     <group>
-                        <field name="cas_name" />
-                        <field name="bcs" />
-                        <field name="classe_SNGPC" />
                         <field name="observations" />
                     </group>
                     <notebook>
@@ -32,28 +29,40 @@
                                 <!-- Allows adding new rows without opening a form -->
                                 <tree>
                                     <field name="parameter_id" />
+                                    <field name="parameter_method" />
                                     <field name="operator" />
-                                    <field name="parameter_target_value" />
-                                    <field name="parameter_tolerance_value" />
+                                    <field name="parameter_target_value"
+                                        invisible="operator == 'characteristic'" />
+                                    <field name="parameter_tolerance_value"
+                                        invisible="operator == 'characteristic'" />
                                     <field name="parameter_range_value" decoration-danger="1" />
-                                    <field name="uom_id" />
+                                    <field name="uom_id" invisible="operator == 'characteristic'" />
                                 </tree>
                                 <form>
                                     <group>
                                         <field name="parameter_id" />
+                                        <field name="parameter_method" />
                                         <field name="operator" />
                                     </group>
                                     <group>
-                                        <field name="parameter_target_value" />
-                                        <field name="parameter_tolerance_value" />
+                                        <field name="parameter_target_value"
+                                            invisible="operator == 'characteristic'" />
+                                        <field name="parameter_tolerance_value"
+                                            invisible="operator == 'characteristic'" />
                                     </group>
-                                    <field name="parameter_range_value" decoration-bf="1" />
-                                    <field name="uom_id" />
+                                    <field string="Value" name="parameter_range_value"
+                                        decoration-bf="1" />
+                                    <field name="uom_id" invisible="operator == 'characteristic'" />
                                 </form>
                             </field>
                         </page>
                         <page string="Pharma">
                             <notebook>
+                                <group>
+                                    <field name="cas_name" />
+                                    <field name="bcs" />
+                                    <field name="classe_SNGPC" />
+                                </group>
                                 <page string="Pharmacology">
                                 </page>
                             </notebook>
@@ -92,7 +101,7 @@
                 <!-- Fields to be displayed in the tree view -->
                 <field name="name" />
                 <field name="uom_id" />
-                <field name="method" />
+                <field name="method_ids" />
             </tree>
         </field>
     </record>
@@ -122,7 +131,6 @@
             </p>
         </field>
     </record>
-
 
 
     <!-- Main menu for the module -->

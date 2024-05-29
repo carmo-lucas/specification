@@ -4,7 +4,7 @@ from odoo import models, fields, api, _
 class SpecificationSheet(models.Model):
     _name = "spec.sheet"
     _description = "Technical Specification of the Product"
-    _inherit = ['mail.thread','mail.activity.mixin']
+    _inherit = ["mail.thread", "mail.activity.mixin"]
 
     product_id = fields.Many2one("product.product")
     technical_name = fields.Text("Product Technical Name")
@@ -49,8 +49,9 @@ class SpecificationProperty(models.Model):
     _description = "Properties listed in Specification Sheet"
     spec_sheet_id = fields.Many2one("spec.sheet")
     parameter_id = fields.Many2one("spec.parameter")
-    parameter_target_value = fields.Float("Target", digits=(12,4))
-    parameter_tolerance_value = fields.Float("Tolerance", digits=(12,4))
+    parameter_method = fields.Many2one("spec.method")
+    parameter_target_value = fields.Float("Target", digits=(12, 4))
+    parameter_tolerance_value = fields.Float("Tolerance", digits=(12, 4))
     parameter_range_value = fields.Char(
         string="Acceptance Value",
         compute="_compute_value_range",
@@ -126,4 +127,4 @@ class SpecificationParameter(models.Model):
             ("qualitative", "Qualitative"),
         ]
     )
-    method = fields.Text(string = "Method")
+    method_ids = fields.One2many("spec.method", "parameter_id")
