@@ -1,4 +1,5 @@
 from odoo import models, fields, api, _
+from odoo.exceptions import UserError
 
 
 class SpecificationSheet(models.Model):
@@ -6,22 +7,49 @@ class SpecificationSheet(models.Model):
     _description = "Technical Specification of the Product"
     _inherit = ["mail.thread", "mail.activity.mixin"]
 
-    product_id = fields.Many2one("product.product")
-    technical_name = fields.Text("Product Technical Name")
-    cas_name = fields.Char("CAS", size=20, trim=False)
+    # General Information
     status = fields.Selection(
         [
             ("draft", "Draft"),
+            ("pending", "Pending"),
             ("validated", "Validated"),
             ("canceled", "Canceled"),
         ],
         default="draft",
     )
+    product_id = fields.Many2one("product.product")
+    technical_name = fields.Text("Technical Name")
+    description = fields.Text(string="Description")
+    specification_type = fields.Selection(
+        string="Type",
+        selection=[
+            ("chemical", "Chemical"),
+            ("physical", "Physical"),
+            ("pharma", "Pharmaceutical"),
+        ],
+        required=True,
+        default="chemical",
+    )
+    storage_condition = fields.Selection(
+        string="Storage condition",
+        selection=[
+            ("cool", "Refrigerated (2 - 8 °C)"),
+            ("room", "Ambient (< 30 °C)"),
+            ("controlled", "Ambient (15 - 20 °C)"),
+        ],
+        default="room",
+        required=True,
+    )
+    # Chemical Specifications
+    cas_name = fields.Char("CAS", size=20, trim=False)
+    molecular_weight = fields.Float("Mw")
+
+    # Pharmaceutical Specifications
     classe_SNGPC = fields.Selection(
         string="Classe SNGPC",
         selection=[("1", "Controle Especial"), ("2", "Antimicrobiano")],
     )
-    # Biopharmaceutical Classification System
+    ## Biopharmaceutical Classification System
     bcs = fields.Selection(
         string="Biopharmaceutical Classification",
         selection=[
@@ -31,13 +59,6 @@ class SpecificationSheet(models.Model):
             ("4", "IV"),
         ],
     )
-    observations = fields.Text(string="Observations")
-
-    # schedule_ids = fields.Many2many(
-    #     "rx.drug.schedule",
-    #     string="Drug Schedule",
-    #     help="Drug Regulatory Classification According to Health Surveilance Agencies",
-    # )
 
     property_ids = fields.One2many(
         "spec.property", "spec_sheet_id", string="Properties"
@@ -74,57 +95,34 @@ class SpecificationProperty(models.Model):
 
     @api.depends("operator")
     def _set_value_range(self):
-        self.ensure_one()
         for rec in self:
             if rec.operator == "characteristic":
                 continue
 
     @api.depends("parameter_target_value", "parameter_tolerance_value", "operator")
     def _compute_value_range(self):
-        self.ensure_one()
         for rec in self:
-            range_min = self.parameter_target_value - self.parameter_tolerance_value
-            range_max = self.parameter_target_value + self.parameter_tolerance_value
+            if rec.parameter_target_value < rec.parameter_tolerance_value:
+                raise UserError("The tolerance value cannot be bigger than the target value")
+            range_min = round(
+                rec.parameter_target_value - rec.parameter_tolerance_value, 6
+            )
+            range_max = round(
+                rec.parameter_target_value + rec.parameter_tolerance_value, 6
+            )
             if rec.parameter_target_value:
                 if rec.operator == "equal":
-                    range = (str(range_min), str(range_max))
-                    rec.parameter_range_value = " - ".join(range)
-                if rec.operator == "lt":
-                    range = str(range_max)
-                    rec.parameter_range_value = "< " + range
-                if rec.operator == "le":
-                    range = str(range_max)
-                    rec.parameter_range_value = "<= " + range
-                if rec.operator == "gt":
-                    range = str(range_min)
-                    rec.parameter_range_value = "> " + range
-                if rec.operator == "ge":
-                    range = str(range_min)
-                    rec.parameter_range_value = ">= " + range
+                    range_str = f"{range_min} - {range_max}"
+                elif rec.operator == "lt":
+                    range_str = f"< {range_max}"
+                elif rec.operator == "le":
+                    range_str = f"<= {range_max}"
+                elif rec.operator == "gt":
+                    range_str = f"> {range_min}"
+                elif rec.operator == "ge":
+                    range_str = f">= {range_min}"
+                else:
+                    range_str = ""
+                rec.parameter_range_value = range_str
             else:
                 rec.parameter_range_value = ""
-        return rec.parameter_range_value
-
-
-class SpecificationPropertiesTemplate(models.Model):
-    _name = "spec.properties.template"
-    _description = "Templates for specification parameters"
-    property_ids = fields.One2many(
-        "spec.property", "spec_sheet_id", string="Properties"
-    )
-
-
-class SpecificationParameter(models.Model):
-    _name = "spec.parameter"
-    _description = "Parameter/Variable of the specification property"
-
-    name = fields.Char("Name", size=32, required=True)
-    description = fields.Text()
-    uom_id = fields.Many2one("uom.uom")
-    parameter_type = fields.Selection(
-        [
-            ("numeric", "Numeric"),
-            ("qualitative", "Qualitative"),
-        ]
-    )
-    method_ids = fields.One2many("spec.method", "parameter_id")

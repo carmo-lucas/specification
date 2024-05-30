@@ -9,7 +9,7 @@
             <form string="Product Specification">
                 <header>
                     <field name="status" widget="statusbar"
-                        statusbar_visible="draft,validated,canceled" />
+                        statusbar_visible="draft,pending,validated,canceled" />
                 </header>
                 <sheet>
                     <div class="oe_title">
@@ -19,7 +19,15 @@
                     </div>
                     <!-- Fields to be displayed in the form -->
                     <group>
-                        <field name="observations" />
+                        <group>
+                            <field name="specification_type" widget="radio"
+                                options="{'horizontal': True}" />
+                            <field name="technical_name" />
+                            <field name="description" />
+                        </group>
+                        <group>
+                            <field name="storage_condition"></field>
+                        </group>
                     </group>
                     <notebook>
                         <page string="Properties">
@@ -29,45 +37,60 @@
                                 <!-- Allows adding new rows without opening a form -->
                                 <tree>
                                     <field name="parameter_id" />
-                                    <field name="parameter_method" />
                                     <field name="operator" />
                                     <field name="parameter_target_value"
                                         invisible="operator == 'characteristic'" />
                                     <field name="parameter_tolerance_value"
                                         invisible="operator == 'characteristic'" />
-                                    <field name="parameter_range_value" decoration-danger="1" />
+                                    <field name="parameter_range_value" decoration-bf="1" decoration-muted="1"/>
                                     <field name="uom_id" invisible="operator == 'characteristic'" />
                                 </tree>
+                                <!-- Add property pop-up -->
                                 <form>
                                     <group>
-                                        <field name="parameter_id" />
-                                        <field name="parameter_method" />
-                                        <field name="operator" />
+                                        <group>
+                                            <field name="parameter_id" />
+                                            <field name="operator" />
+                                        </group>
+                                        <group>
+                                            <field name="parameter_target_value"
+                                                invisible="operator == 'characteristic'" />
+                                            <field name="parameter_tolerance_value"
+                                                invisible="operator == 'characteristic'" />
+                                            <field string="Value" name="parameter_range_value"
+                                                class="oe_inline" />
+                                            <field name="uom_id"
+                                                invisible="operator == 'characteristic'"
+                                                placeholder="unit of measurement" class="oe_inline" />
+
+                                        </group>
                                     </group>
-                                    <group>
-                                        <field name="parameter_target_value"
-                                            invisible="operator == 'characteristic'" />
-                                        <field name="parameter_tolerance_value"
-                                            invisible="operator == 'characteristic'" />
-                                    </group>
-                                    <field string="Value" name="parameter_range_value"
-                                        decoration-bf="1" />
-                                    <field name="uom_id" invisible="operator == 'characteristic'" />
                                 </form>
                             </field>
                         </page>
-                        <page string="Pharma">
+                        <page string="Pharmaceutical" invisible="specification_type != 'pharma'">
+                            <group>
+                                <field name="cas_name" />
+                                <field name="bcs" />
+                                <field name="classe_SNGPC" />
+                            </group>
                             <notebook>
-                                <group>
-                                    <field name="cas_name" />
-                                    <field name="bcs" />
-                                    <field name="classe_SNGPC" />
-                                </group>
                                 <page string="Pharmacology">
+                                </page>
+                                <page string="Associations">
                                 </page>
                             </notebook>
                         </page>
-                        <page string="Associations">
+                        <page string="Chemical" invisible="specification_type != 'chemical'">
+                            <group>
+                                <field name="cas_name" />
+                            </group>
+                        </page>
+                        <page string="Physical" invisible="specification_type != 'physical'">
+                            <group>
+                                <h1>Physical properties to be added like, packagind drawing and
+                                    mayer material type</h1>
+                            </group>
                         </page>
                     </notebook>
                 </sheet>
@@ -101,7 +124,7 @@
                 <!-- Fields to be displayed in the tree view -->
                 <field name="name" />
                 <field name="uom_id" />
-                <field name="method_ids" />
+                <field name="method" />
             </tree>
         </field>
     </record>
