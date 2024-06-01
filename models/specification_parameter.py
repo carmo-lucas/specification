@@ -6,7 +6,7 @@ class SpecificationParameter(models.Model):
 
     name = fields.Char("Name", size=32, required=True)
     description = fields.Text()
-    uom_id = fields.Many2one("uom.category")
+    uom_category_id = fields.Many2one("uom.category")
     parameter_type = fields.Selection(
         [
             ("numeric", "Numeric"),

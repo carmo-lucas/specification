@@ -19,14 +19,15 @@
                     </div>
                     <!-- Fields to be displayed in the form -->
                     <group>
-                        <group>
+                        <group string="General Information">
                             <field name="specification_type" widget="radio"
                                 options="{'horizontal': True}" />
                             <field name="technical_name" />
                             <field name="description" />
                         </group>
-                        <group>
-                            <field name="storage_condition"></field>
+                        <group string="Storage">
+                            <field name="storage_condition" widget="radio"></field>
+                            <field name="storage_packaging"></field>
                         </group>
                     </group>
                     <notebook>
@@ -42,7 +43,8 @@
                                         invisible="operator == 'characteristic'" />
                                     <field name="parameter_tolerance_value"
                                         invisible="operator == 'characteristic'" />
-                                    <field name="parameter_range_value" decoration-bf="1" decoration-muted="1"/>
+                                    <field name="parameter_range_value" decoration-bf="1"
+                                        decoration-muted="1" />
                                     <field name="uom_id" invisible="operator == 'characteristic'" />
                                 </tree>
                                 <!-- Add property pop-up -->
@@ -62,7 +64,6 @@
                                             <field name="uom_id"
                                                 invisible="operator == 'characteristic'"
                                                 placeholder="unit of measurement" class="oe_inline" />
-
                                         </group>
                                     </group>
                                 </form>
@@ -88,8 +89,8 @@
                         </page>
                         <page string="Physical" invisible="specification_type != 'physical'">
                             <group>
-                                <h1>Physical properties to be added like, packagind drawing and
-                                    mayer material type</h1>
+                                <h1>Physical properties to be added like, packaging drawing and
+material type</h1>
                             </group>
                         </page>
                     </notebook>
@@ -123,9 +124,28 @@
             <tree string="Parameters">
                 <!-- Fields to be displayed in the tree view -->
                 <field name="name" />
-                <field name="uom_id" />
+                <field name="uom_category_id" />
                 <field name="method" />
             </tree>
+        </field>
+    </record>
+
+    <record id="spec_parameter_form_view" model="ir.ui.view">
+        <field name="name">spec.parameter.form</field>
+        <field name="model">spec.parameter</field>
+        <field name="arch" type="xml">
+            <form string="Parameters">
+                <!-- Fields to be displayed in the tree view -->
+                <group>
+                    <field name="name" />
+                    <field name="description" />
+                    <field name="uom_category_id" />
+                    <field name="method" />
+                    <field name="parameter_type" widget="radio"
+                    options="{'horizontal': True}" />
+                    <field name="note" />
+                </group>
+            </form>
         </field>
     </record>
 
