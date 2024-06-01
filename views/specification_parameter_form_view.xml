@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="spec_parameter_form_view" model="ir.ui.view">
+        <field name="name">spec.parameter.form</field>
+        <field name="model">spec.parameter</field>
+        <field name="arch" type="xml">
+            <form string="Parameters">
+                <!-- Fields to be displayed in the tree view -->
+                <group>
+                    <field name="name" />
+                    <field name="description" />
+                    <field name="uom_category_id" />
+                    <field name="method" />
+                    <field name="parameter_type" widget="radio"
+                    options="{'horizontal': True}" />
+                    <field name="note" />
+                </group>
+            </form>
+        </field>
+    </record>
+</odoo>

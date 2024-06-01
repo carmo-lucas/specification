@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Definition of a view for the tree view of product specifications -->
+    <record id="spec_sheet_tree_view" model="ir.ui.view">
+        <field name="name">spec.sheet.tree</field>
+        <field name="model">spec.sheet</field>
+        <field name="arch" type="xml">
+            <tree string="Specification Sheet">
+                <!-- Fields to be displayed in the tree view -->
+                <field name="product_id" />
+                <field name="status" />
+            </tree>
+        </field>
+    </record>
+</odoo>

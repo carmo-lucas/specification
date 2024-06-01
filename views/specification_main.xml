@@ -1,154 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 
-    <!-- Definition of a view for the form of product specifications -->
-    <record id="spec_sheet_form_view" model="ir.ui.view">
-        <field name="name">spec.sheet.form</field>
-        <field name="model">spec.sheet</field>
-        <field name="arch" type="xml">
-            <form string="Product Specification">
-                <header>
-                    <field name="status" widget="statusbar"
-                        statusbar_visible="draft,pending,validated,canceled" />
-                </header>
-                <sheet>
-                    <div class="oe_title">
-                        <h1>
-                            <field name="product_id" />
-                        </h1>
-                    </div>
-                    <!-- Fields to be displayed in the form -->
-                    <group>
-                        <group string="General Information">
-                            <field name="specification_type" widget="radio"
-                                options="{'horizontal': True}" />
-                            <field name="technical_name" />
-                            <field name="description" />
-                        </group>
-                        <group string="Storage">
-                            <field name="storage_condition" widget="radio"></field>
-                            <field name="storage_packaging"></field>
-                        </group>
-                    </group>
-                    <notebook>
-                        <page string="Properties">
-                            <!-- Field for a one-to-many relation with 'property_ids' -->
-                            <field name="property_ids" widget="section_and_note_one2many">
-                                <!-- Tree view for 'property_ids' field -->
-                                <!-- Allows adding new rows without opening a form -->
-                                <tree>
-                                    <field name="parameter_id" />
-                                    <field name="operator" />
-                                    <field name="parameter_target_value"
-                                        invisible="operator == 'characteristic'" />
-                                    <field name="parameter_tolerance_value"
-                                        invisible="operator == 'characteristic'" />
-                                    <field name="parameter_range_value" decoration-bf="1"
-                                        decoration-muted="1" />
-                                    <field name="uom_id" invisible="operator == 'characteristic'" />
-                                </tree>
-                                <!-- Add property pop-up -->
-                                <form>
-                                    <group>
-                                        <group>
-                                            <field name="parameter_id" />
-                                            <field name="operator" />
-                                        </group>
-                                        <group>
-                                            <field name="parameter_target_value"
-                                                invisible="operator == 'characteristic'" />
-                                            <field name="parameter_tolerance_value"
-                                                invisible="operator == 'characteristic'" />
-                                            <field string="Value" name="parameter_range_value"
-                                                class="oe_inline" />
-                                            <field name="uom_id"
-                                                invisible="operator == 'characteristic'"
-                                                placeholder="unit of measurement" class="oe_inline" />
-                                        </group>
-                                    </group>
-                                </form>
-                            </field>
-                        </page>
-                        <page string="Pharmaceutical" invisible="specification_type != 'pharma'">
-                            <group>
-                                <field name="cas_name" />
-                                <field name="bcs" />
-                                <field name="classe_SNGPC" />
-                            </group>
-                            <notebook>
-                                <page string="Pharmacology">
-                                </page>
-                                <page string="Associations">
-                                </page>
-                            </notebook>
-                        </page>
-                        <page string="Chemical" invisible="specification_type != 'chemical'">
-                            <group>
-                                <field name="cas_name" />
-                            </group>
-                        </page>
-                        <page string="Physical" invisible="specification_type != 'physical'">
-                            <group>
-                                <h1>Physical properties to be added like, packaging drawing and
-material type</h1>
-                            </group>
-                        </page>
-                    </notebook>
-                </sheet>
-                <div class="oe_chatter">
-                    <field name="message_follower_ids" />
-                    <field name="activity_ids" />
-                    <field name="message_ids" />
-                </div>
-            </form>
-        </field>
-    </record>
-
-    <!-- Definition of a view for the tree view of product specifications -->
-    <record id="spec_sheet_tree_view" model="ir.ui.view">
-        <field name="name">spec.sheet.tree</field>
-        <field name="model">spec.sheet</field>
-        <field name="arch" type="xml">
-            <tree string="Specification Sheet">
-                <!-- Fields to be displayed in the tree view -->
-                <field name="product_id" />
-                <field name="status" />
-            </tree>
-        </field>
-    </record>
-
-    <record id="spec_parameter_tree_view" model="ir.ui.view">
-        <field name="name">spec.parameter.tree</field>
-        <field name="model">spec.parameter</field>
-        <field name="arch" type="xml">
-            <tree string="Parameters">
-                <!-- Fields to be displayed in the tree view -->
-                <field name="name" />
-                <field name="uom_category_id" />
-                <field name="method" />
-            </tree>
-        </field>
-    </record>
-
-    <record id="spec_parameter_form_view" model="ir.ui.view">
-        <field name="name">spec.parameter.form</field>
-        <field name="model">spec.parameter</field>
-        <field name="arch" type="xml">
-            <form string="Parameters">
-                <!-- Fields to be displayed in the tree view -->
-                <group>
-                    <field name="name" />
-                    <field name="description" />
-                    <field name="uom_category_id" />
-                    <field name="method" />
-                    <field name="parameter_type" widget="radio"
-                    options="{'horizontal': True}" />
-                    <field name="note" />
-                </group>
-            </form>
-        </field>
-    </record>
-
     <!-- Definition of an action for opening the product specification view -->
     <record id="action_specification" model="ir.actions.act_window">
         <field name="name">Specifications</field>
@@ -175,7 +27,6 @@ material type</h1>
         </field>
     </record>
 
-
     <!-- Main menu for the module -->
     <!-- Level 0 Root Menu Button -->
     <menuitem name="Specifications" id="specifications_root" sequence="3" />
@@ -201,5 +52,4 @@ material type</h1>
         id="spec_configuration_parameters"
         parent="spec_configuration_menu"
         action="action_configuration_parameters" />
-
 </odoo>
