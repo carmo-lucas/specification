@@ -16,7 +16,7 @@ class SpecificationSheet(models.Model):
             ("canceled", "Canceled"),
         ],
         default="draft",
-        tracking = True
+        tracking=True,
     )
     product_id = fields.Many2one("product.product")
     technical_name = fields.Text("Technical Name")
@@ -39,7 +39,7 @@ class SpecificationSheet(models.Model):
             ("controlled", "Ambient (15 - 20 °C)"),
         ],
         default="room",
-        required=True,
+        required=True
     )
 
     storage_packaging = fields.Text(string="Storage Packaging")
@@ -67,3 +67,6 @@ class SpecificationSheet(models.Model):
     property_ids = fields.One2many(
         "spec.property", "spec_sheet_id", string="Properties"
     )
+
+    def request_validation(self):
+        self.status = "pending"

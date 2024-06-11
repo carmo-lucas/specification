@@ -9,6 +9,8 @@
                 <header>
                     <button name="request_validation" string="Request" type="object"
                         class="oe_highlight" />
+                    <button name="%(specification.action_validate_spec_sheet)d" string="Validate"
+                        type="action" />
                     <field name="status" widget="statusbar"
                         statusbar_visible="draft,pending,validated,canceled" />
                 </header>

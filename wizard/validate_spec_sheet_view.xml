@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="action_validate_spec_sheet" model="ir.actions.act_window">
+        <field name="name">Validate</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">validate.spec.sheet</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+
+
+    <record id="validate_spec_sheet_form" model="ir.ui.view">
+        <field name="name">validate.spec.sheet.modal</field>
+        <field name="model">validate.spec.sheet</field>
+        <field name="arch" type="xml">
+            <form string="Validate Specification Sheet">
+                <group>
+                    <field name="description" />
+                    <field name="password" />
+                </group>
+                <footer>
+                    <button name="write_to_thread" string="Record"></button>
+                </footer>
+            </form>
+        </field>
+    </record>
+</odoo>
