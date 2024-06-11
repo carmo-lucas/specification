@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
     <record id="action_validate_spec_sheet" model="ir.actions.act_window">
-        <field name="name">Validate</field>
+        <field name="name">Validation</field>
         <field name="type">ir.actions.act_window</field>
         <field name="res_model">validate.spec.sheet</field>
         <field name="view_mode">form</field>
@@ -13,13 +13,16 @@
         <field name="name">validate.spec.sheet.modal</field>
         <field name="model">validate.spec.sheet</field>
         <field name="arch" type="xml">
-            <form string="Validate Specification Sheet">
+            <form >
                 <group>
-                    <field name="description" />
+                    <!-- <field name="specification_sheet_id" /> -->
+                    <field name="comment" />
                     <field name="password" />
                 </group>
                 <footer>
-                    <button name="write_to_thread" string="Record"></button>
+                    <button name="write_to_thread" string="Record" type="object"
+                        class="oe_highlight"></button>
+                    <button special="cancel" string="Cancel" class="oe_link"></button>
                 </footer>
             </form>
         </field>
