@@ -8,7 +8,6 @@
         <field name="target">new</field>
     </record>
 
-
     <record id="validate_spec_sheet_form" model="ir.ui.view">
         <field name="name">validate.spec.sheet.modal</field>
         <field name="model">validate.spec.sheet</field>
