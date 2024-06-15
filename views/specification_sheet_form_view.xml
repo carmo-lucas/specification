@@ -54,8 +54,8 @@
                                 <form>
                                     <group>
                                         <group>
-                                            <field name="parameter_id" />
-                                            <field name="operator" />
+                                            <field name="parameter_id" required="1"/>
+                                            <field name="operator" required="1"/>
                                         </group>
                                         <group>
                                             <field name="parameter_target_value"
