@@ -34,11 +34,11 @@ class SpecificationSheet(models.Model):
     storage_condition = fields.Selection(
         string="Storage condition",
         selection=[
-            ("cool", "❄️ Refrigerated (2 - 8 °C)"),
-            ("room", "Ambient (< 30 °C)"),
+            ("cool", "Refrigerated (2 - 8 °C)"),
             ("controlled", "Ambient (15 - 20 °C)"),
+            ("room", "Ambient (< 30 °C)"),
         ],
-        default="room",
+        default="controlled",
         required=True
     )
 
