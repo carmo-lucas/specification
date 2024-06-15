@@ -1,0 +1,7 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+specification.access_validate_spec_sheet,access_validate_spec_sheet,specification.model_validate_spec_sheet,base.group_user,1,1,1,1
+specification.access_spec_sheet,access_spec_sheet,specification.model_spec_sheet,base.group_user,1,1,1,1
+specification.access_spec_method,access_spec_method,specification.model_spec_method,base.group_user,1,1,1,1
+specification.access_spec_parameter,access_spec_parameter,specification.model_spec_parameter,base.group_user,1,1,1,1
+specification.access_spec_properties_template,access_spec_properties_template,specification.model_spec_properties_template,base.group_user,1,1,1,1
+specification.access_spec_property,access_spec_property,specification.model_spec_property,base.group_user,1,1,1,1

@@ -8,6 +8,7 @@
     'depends': ['mail','product'],
     'sequence': 1,
     'data': [
+        'security/ir.model.access.csv',
         'wizard/validate_spec_sheet_view.xml', # wizard tem que ser antes das views
         'views/specification_main.xml',
         'views/specification_parameter_form_view.xml',
