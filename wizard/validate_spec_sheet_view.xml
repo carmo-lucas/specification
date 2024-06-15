@@ -15,12 +15,12 @@
             <form >
                 <group>
                     <!-- <field name="specification_sheet_id" /> -->
-                    <field name="comment" />
-                    <field name="password" />
+                    <field name="comment" required="1"/>
+                    <field name="password" password="True" required="1"/>
                 </group>
                 <footer>
                     <button name="write_to_thread" string="Record" type="object"
-                        class="oe_highlight"></button>
+                        class="oe_highlight" data-hotkey="13"></button>
                     <button special="cancel" string="Cancel" class="oe_link"></button>
                 </footer>
             </form>
