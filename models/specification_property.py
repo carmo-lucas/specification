@@ -38,8 +38,8 @@ class SpecificationProperty(models.Model):
     @api.depends("parameter_target_value", "parameter_tolerance_value", "operator")
     def _compute_value_range(self):
         for rec in self:
-            if rec.parameter_target_value < rec.parameter_tolerance_value:
-                raise UserError("The tolerance value cannot be bigger than the target value")
+            # if rec.parameter_target_value < rec.parameter_tolerance_value:
+            #     raise UserError("The tolerance value cannot be bigger than the target value")
             range_min = round(
                 rec.parameter_target_value - rec.parameter_tolerance_value, 6
             )
@@ -47,18 +47,14 @@ class SpecificationProperty(models.Model):
                 rec.parameter_target_value + rec.parameter_tolerance_value, 6
             )
             if rec.parameter_target_value:
-                if rec.operator == "equal":
-                    range_str = f"{range_min} - {range_max}"
-                elif rec.operator == "lt":
-                    range_str = f"< {range_max}"
-                elif rec.operator == "le":
-                    range_str = f"<= {range_max}"
-                elif rec.operator == "gt":
-                    range_str = f"> {range_min}"
-                elif rec.operator == "ge":
-                    range_str = f">= {range_min}"
-                else:
-                    range_str = ""
+                operator_map = {
+                    "equal": f"{range_min} - {range_max}",
+                    "lt": f"< {range_max}",
+                    "le": f"<= {range_max}",
+                    "gt": f"> {range_min}",
+                    "ge": f">= {range_min}",
+                }
+                range_str = operator_map.get(rec.operator, "")
                 rec.parameter_range_value = range_str
             else:
                 rec.parameter_range_value = ""
