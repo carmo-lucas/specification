@@ -18,6 +18,9 @@ class SpecificationSheet(models.Model):
         default="draft",
         tracking=True,
     )
+    # Version Control
+    version  = fields.Integer("Version", default = 1, tracking = True)
+    
     product_id = fields.Many2one("product.product")
     technical_name = fields.Text("Technical Name")
     description = fields.Text(string="Description")
@@ -70,3 +73,7 @@ class SpecificationSheet(models.Model):
 
     def request_validation(self):
         self.status = "pending"
+
+    def cancel_specification(self):
+        self.status = "canceled"
+
