@@ -1,0 +1,647 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* specification
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 17.0-20240408\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-06-22 01:48+0000\n"
+"PO-Revision-Date: 2024-06-22 01:48+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: specification
+#: model:ir.model.fields,field_description:specification.field_spec_property__parameter_range_value
+msgid "Acceptance Value"
+msgstr "Valor de Aceitação"
+
+#. module: specification
+#: model:ir.model.fields,field_description:specification.field_spec_sheet__message_needaction
+msgid "Action Needed"
+msgstr "Ação necessária"
+
+#. module: specification
+#: model:ir.model.fields,field_description:specification.field_spec_sheet__activity_ids
+msgid "Activities"
+msgstr "Atividades"
+
+#. module: specification
+#: model:ir.model.fields,field_description:specification.field_spec_sheet__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr "Decoração de exceção de atividade"
+
+#. module: specification
+#: model:ir.model.fields,field_description:specification.field_spec_sheet__activity_state
+msgid "Activity State"
+msgstr "Estado da Atividade"
+
+#. module: specification
+#: model:ir.model.fields,field_description:specification.field_spec_sheet__activity_type_icon
+msgid "Activity Type Icon"
+msgstr "Ícone do tipo de atividade"
+
+#. module: specification
+#: model_terms:ir.actions.act_window,help:specification.action_specification
+msgid "Add new product specification"
+msgstr "Adicionar nova especificação de produto"
+
+#. module: specification
+#: model:ir.model.fields.selection,name:specification.selection__spec_sheet__storage_condition__controlled
+msgid "Ambient (15 - 20 °C)"
+msgstr "Ambiente (15 - 20 °C)"
+
+#. module: specification
+#: model:ir.model.fields.selection,name:specification.selection__spec_sheet__storage_condition__room
+msgid "Ambient (< 30 °C)"
+msgstr "Ambiente (< 30 °C)"
+
+#. module: specification
+#: model:ir.model.fields.selection,name:specification.selection__spec_sheet__classe_SNGPC__2
+msgid "Antimicrobiano"
+msgstr ""
+
+#. module: specification
+#: model_terms:ir.ui.view,arch_db:specification.spec_sheet_form_view
+msgid "Associations"
+msgstr "Associações"
+
+#. module: specification
+#: model:ir.model.fields,field_description:specification.field_spec_sheet__message_attachment_count
+msgid "Attachment Count"
+msgstr "Contagem de Anexos"
+
+#. module: specification
+#: model:ir.model.fields,field_description:specification.field_spec_method__reference
+msgid "Bibliography reference"
+msgstr "Referência bibliográfica"
+
+#. module: specification
+#: model:ir.model.fields,field_description:specification.field_spec_sheet__bcs
+msgid "Biopharmaceutical Classification"
+msgstr "Classificação Biofarmacêutica"
+
+#. module: specification
+#: model:ir.model.fields,field_description:specification.field_spec_sheet__cas_name
+msgid "CAS"
+msgstr ""
+
+#. module: specification
+#: model_terms:ir.ui.view,arch_db:specification.spec_sheet_form_view
+#: model_terms:ir.ui.view,arch_db:specification.validate_spec_sheet_form
+msgid "Cancel"
+msgstr "Cancelar"
+
+#. module: specification
+#: model:ir.model.fields.selection,name:specification.selection__spec_sheet__status__canceled
+#: model_terms:ir.ui.view,arch_db:specification.spec_sheet_form_view
+msgid "Canceled"
+msgstr "Cancelado"
+
+#. module: specification
+#: model:ir.model.fields.selection,name:specification.selection__spec_property__operator__characteristic
+msgid "Characteristic"
+msgstr "Característica"
+
+#. module: specification
+#: model:ir.model.fields.selection,name:specification.selection__spec_sheet__specification_type__chemical
+#: model_terms:ir.ui.view,arch_db:specification.spec_sheet_form_view
+msgid "Chemical"
+msgstr "Químico"
+
+#. module: specification
+#: model:ir.model.fields,field_description:specification.field_spec_sheet__classe_SNGPC
+msgid "Classe SNGPC"
+msgstr ""
+
+#. module: specification
+#: model:ir.model.fields,field_description:specification.field_validate_spec_sheet__comment
+msgid "Comment"
+msgstr "Comentário"
+
+#. module: specification
+#: model:ir.ui.menu,name:specification.spec_configuration_menu
+msgid "Configuration"
+msgstr "Configuração"
+
+#. module: specification
+#: model_terms:ir.actions.act_window,help:specification.action_configuration_parameters
+msgid "Configure Specification Parameters"
+msgstr "Configurar Parâmetros de Especificação"
+
+#. module: specification
+#: model:ir.model.fields.selection,name:specification.selection__spec_sheet__classe_SNGPC__1
+msgid "Controle Especial"
+msgstr ""
+
+#. module: specification
+#: model:ir.model.fields,field_description:specification.field_spec_method__create_uid
+#: model:ir.model.fields,field_description:specification.field_spec_parameter__create_uid
+#: model:ir.model.fields,field_description:specification.field_spec_properties_template__create_uid
+#: model:ir.model.fields,field_description:specification.field_spec_property__create_uid
+#: model:ir.model.fields,field_description:specification.field_spec_sheet__create_uid
+#: model:ir.model.fields,field_description:specification.field_validate_spec_sheet__create_uid
+msgid "Created by"
+msgstr "Criado por"
+
+#. module: specification
+#: model:ir.model.fields,field_description:specification.field_spec_method__create_date
+#: model:ir.model.fields,field_description:specification.field_spec_parameter__create_date
+#: model:ir.model.fields,field_description:specification.field_spec_properties_template__create_date
+#: model:ir.model.fields,field_description:specification.field_spec_property__create_date
+#: model:ir.model.fields,field_description:specification.field_spec_sheet__create_date
+#: model:ir.model.fields,field_description:specification.field_validate_spec_sheet__create_date
+msgid "Created on"
+msgstr "Criado em"
+
+#. module: specification
+#: model:ir.model.fields,field_description:specification.field_spec_method__description
+#: model:ir.model.fields,field_description:specification.field_spec_parameter__description
+#: model:ir.model.fields,field_description:specification.field_spec_sheet__description
+msgid "Description"
+msgstr "Descrição"
+
+#. module: specification
+#: model:ir.model.fields,field_description:specification.field_spec_method__display_name
+#: model:ir.model.fields,field_description:specification.field_spec_parameter__display_name
+#: model:ir.model.fields,field_description:specification.field_spec_properties_template__display_name
+#: model:ir.model.fields,field_description:specification.field_spec_property__display_name
+#: model:ir.model.fields,field_description:specification.field_spec_sheet__display_name
+#: model:ir.model.fields,field_description:specification.field_validate_spec_sheet__display_name
+msgid "Display Name"
+msgstr "Nome de exibição"
+
+#. module: specification
+#: model:ir.model.fields.selection,name:specification.selection__spec_sheet__status__draft
+msgid "Draft"
+msgstr "Rascunho"
+
+#. module: specification
+#: model:ir.model.fields,field_description:specification.field_spec_sheet__message_follower_ids
+msgid "Followers"
+msgstr "Seguidores"
+
+#. module: specification
+#: model:ir.model.fields,field_description:specification.field_spec_sheet__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "Seguidores (Parceiros)"
+
+#. module: specification
+#: model:ir.model.fields,help:specification.field_spec_sheet__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr "Ícone Font Awesome, por exemplo fa-tasks. "
+
+#. module: specification
+#: model_terms:ir.ui.view,arch_db:specification.spec_sheet_form_view
+msgid "General Information"
+msgstr "Informações Gerais"
+
+#. module: specification
+#: model:ir.model.fields,field_description:specification.field_spec_sheet__has_message
+msgid "Has Message"
+msgstr "Tem mensagem"
+
+#. module: specification
+#: model:ir.model.fields,field_description:specification.field_spec_method__id
+#: model:ir.model.fields,field_description:specification.field_spec_parameter__id
+#: model:ir.model.fields,field_description:specification.field_spec_properties_template__id
+#: model:ir.model.fields,field_description:specification.field_spec_property__id
+#: model:ir.model.fields,field_description:specification.field_spec_sheet__id
+#: model:ir.model.fields,field_description:specification.field_validate_spec_sheet__id
+msgid "ID"
+msgstr ""
+
+#. module: specification
+#: model:ir.model.fields.selection,name:specification.selection__spec_sheet__bcs__2
+msgid "II"
+msgstr ""
+
+#. module: specification
+#: model:ir.model.fields.selection,name:specification.selection__spec_sheet__bcs__3
+msgid "III"
+msgstr ""
+
+#. module: specification
+#: model:ir.model.fields.selection,name:specification.selection__spec_sheet__bcs__4
+msgid "IV"
+msgstr ""
+
+#. module: specification
+#: model:ir.model.fields,field_description:specification.field_spec_sheet__activity_exception_icon
+msgid "Icon"
+msgstr "Ícone"
+
+#. module: specification
+#: model:ir.model.fields,help:specification.field_spec_sheet__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr "Ícone para indicar uma atividade de exceção."
+
+#. module: specification
+#: model:ir.model.fields,help:specification.field_spec_sheet__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr "Se marcado, novas mensagens requerem sua atenção."
+
+#. module: specification
+#: model:ir.model.fields,help:specification.field_spec_sheet__message_has_error
+#: model:ir.model.fields,help:specification.field_spec_sheet__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr "Se marcada, algumas mensagens apresentam erro de entrega."
+
+#. module: specification
+#. odoo-python
+#: code:addons/specification/wizard/validate_spec_sheet.py:0
+#, python-format
+msgid "Invalid password"
+msgstr "Senha inválida"
+
+#. module: specification
+#: model:ir.model.fields,field_description:specification.field_spec_sheet__message_is_follower
+msgid "Is Follower"
+msgstr "É seguidor"
+
+#. module: specification
+#: model:ir.model.fields,field_description:specification.field_spec_method__write_uid
+#: model:ir.model.fields,field_description:specification.field_spec_parameter__write_uid
+#: model:ir.model.fields,field_description:specification.field_spec_properties_template__write_uid
+#: model:ir.model.fields,field_description:specification.field_spec_property__write_uid
+#: model:ir.model.fields,field_description:specification.field_spec_sheet__write_uid
+#: model:ir.model.fields,field_description:specification.field_validate_spec_sheet__write_uid
+msgid "Last Updated by"
+msgstr "Última atualização por"
+
+#. module: specification
+#: model:ir.model.fields,field_description:specification.field_spec_method__write_date
+#: model:ir.model.fields,field_description:specification.field_spec_parameter__write_date
+#: model:ir.model.fields,field_description:specification.field_spec_properties_template__write_date
+#: model:ir.model.fields,field_description:specification.field_spec_property__write_date
+#: model:ir.model.fields,field_description:specification.field_spec_sheet__write_date
+#: model:ir.model.fields,field_description:specification.field_validate_spec_sheet__write_date
+msgid "Last Updated on"
+msgstr "Última atualização em"
+
+#. module: specification
+#: model:ir.model.fields,field_description:specification.field_spec_sheet__message_has_error
+msgid "Message Delivery error"
+msgstr "Erro de entrega de mensagem"
+
+#. module: specification
+#: model:ir.model.fields,field_description:specification.field_spec_sheet__message_ids
+msgid "Messages"
+msgstr "Mensagens"
+
+#. module: specification
+#: model:ir.model.fields,field_description:specification.field_spec_method__name
+msgid "Method Name"
+msgstr "Nome do Método"
+
+#. module: specification
+#: model:ir.model.fields,field_description:specification.field_spec_parameter__method
+msgid "Method Used"
+msgstr "Método Utilizado"
+
+#. module: specification
+#: model:ir.model.fields,field_description:specification.field_spec_property__operator
+msgid "Mode"
+msgstr "Modo"
+
+#. module: specification
+#: model:ir.model.fields,field_description:specification.field_spec_sheet__molecular_weight
+msgid "Mw"
+msgstr "Mw"
+
+#. module: specification
+#: model:ir.model.fields,field_description:specification.field_spec_sheet__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr "Prazo da minha atividade"
+
+#. module: specification
+#: model:ir.model.fields,field_description:specification.field_spec_parameter__name
+msgid "Name"
+msgstr "Nome"
+
+#. module: specification
+#: model:ir.model.fields,field_description:specification.field_spec_sheet__activity_calendar_event_id
+msgid "Next Activity Calendar Event"
+msgstr "Próximo evento do calendário de atividades"
+
+#. module: specification
+#: model:ir.model.fields,field_description:specification.field_spec_sheet__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "Prazo da próxima atividade"
+
+#. module: specification
+#: model:ir.model.fields,field_description:specification.field_spec_sheet__activity_summary
+msgid "Next Activity Summary"
+msgstr "Resumo da próxima atividade"
+
+#. module: specification
+#: model:ir.model.fields,field_description:specification.field_spec_sheet__activity_type_id
+msgid "Next Activity Type"
+msgstr "Próximo tipo de atividade"
+
+#. module: specification
+#: model:ir.model.fields,field_description:specification.field_spec_parameter__note
+msgid "Note"
+msgstr "Nota"
+
+#. module: specification
+#: model:ir.model.fields,field_description:specification.field_spec_sheet__message_needaction_counter
+msgid "Number of Actions"
+msgstr "Número de Ações"
+
+#. module: specification
+#: model:ir.model.fields,field_description:specification.field_spec_sheet__message_has_error_counter
+msgid "Number of errors"
+msgstr "Número de erros"
+
+#. module: specification
+#: model:ir.model.fields,help:specification.field_spec_sheet__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr "Número de mensagens que exigem ação"
+
+#. module: specification
+#: model:ir.model.fields,help:specification.field_spec_sheet__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "Número de mensagens com erro de entrega"
+
+#. module: specification
+#: model:ir.model.fields.selection,name:specification.selection__spec_parameter__parameter_type__numeric
+msgid "Numeric"
+msgstr "Numérico"
+
+#. module: specification
+#: model:ir.model.fields,field_description:specification.field_spec_method__parameter_id
+#: model:ir.model.fields,field_description:specification.field_spec_property__parameter_id
+msgid "Parameter"
+msgstr "Parâmetro"
+
+#. module: specification
+#: model:ir.model.fields,field_description:specification.field_spec_property__parameter_method
+msgid "Parameter Method"
+msgstr "Método do Parâmetro"
+
+#. module: specification
+#: model:ir.model.fields,field_description:specification.field_spec_parameter__parameter_type
+msgid "Parameter Type"
+msgstr "Tipo de Parâmetro"
+
+#. module: specification
+#: model:ir.model,name:specification.model_spec_parameter
+msgid "Parameter/Variable of the specification property"
+msgstr "Parâmetro/Variável da propriedade de especificação"
+
+#. module: specification
+#: model:ir.actions.act_window,name:specification.action_configuration_parameters
+#: model:ir.ui.menu,name:specification.spec_configuration_parameters
+#: model_terms:ir.ui.view,arch_db:specification.spec_parameter_form_view
+#: model_terms:ir.ui.view,arch_db:specification.spec_parameter_tree_view
+msgid "Parameters"
+msgstr "Parâmetros"
+
+#. module: specification
+#: model:ir.model.fields,field_description:specification.field_validate_spec_sheet__password
+msgid "Password"
+msgstr "Senha"
+
+#. module: specification
+#: model:ir.model.fields.selection,name:specification.selection__spec_sheet__status__pending
+msgid "Pending"
+msgstr "Pendente"
+
+#. module: specification
+#: model:ir.model.fields.selection,name:specification.selection__spec_sheet__specification_type__pharma
+#: model_terms:ir.ui.view,arch_db:specification.spec_sheet_form_view
+msgid "Pharmaceutical"
+msgstr "Farmacêutica"
+
+#. module: specification
+#: model_terms:ir.ui.view,arch_db:specification.spec_sheet_form_view
+msgid "Pharmacology"
+msgstr "Farmacologia"
+
+#. module: specification
+#: model:ir.model.fields.selection,name:specification.selection__spec_sheet__specification_type__physical
+#: model_terms:ir.ui.view,arch_db:specification.spec_sheet_form_view
+msgid "Physical"
+msgstr "Físico"
+
+#. module: specification
+#: model_terms:ir.ui.view,arch_db:specification.spec_sheet_form_view
+msgid ""
+"Physical properties to be added like, packaging drawing\n"
+"                                    and material type"
+msgstr "Propriedades físicas a serem adicionadas, como desenho de embalagem\n e tipo de material"
+
+#. module: specification
+#: model:ir.model.fields,field_description:specification.field_spec_sheet__product_id
+msgid "Product"
+msgstr "Produto"
+
+#. module: specification
+#: model_terms:ir.ui.view,arch_db:specification.spec_sheet_form_view
+msgid "Product Specification"
+msgstr "Especificação do Produto"
+
+#. module: specification
+#: model:ir.model.fields,field_description:specification.field_spec_properties_template__property_ids
+#: model:ir.model.fields,field_description:specification.field_spec_sheet__property_ids
+#: model_terms:ir.ui.view,arch_db:specification.spec_sheet_form_view
+msgid "Properties"
+msgstr "Propriedades"
+
+#. module: specification
+#: model:ir.model,name:specification.model_spec_property
+msgid "Properties listed in Specification Sheet"
+msgstr "Propriedades listadas na Ficha de Especificação"
+
+#. module: specification
+#: model:ir.model.fields.selection,name:specification.selection__spec_parameter__parameter_type__qualitative
+msgid "Qualitative"
+msgstr "Qualitativo"
+
+#. module: specification
+#: model:ir.model.fields,field_description:specification.field_spec_sheet__rating_ids
+msgid "Ratings"
+msgstr "Avaliações"
+
+#. module: specification
+#: model_terms:ir.ui.view,arch_db:specification.validate_spec_sheet_form
+msgid "Record"
+msgstr "Registrar"
+
+#. module: specification
+#: model:ir.model.fields.selection,name:specification.selection__spec_sheet__storage_condition__cool
+msgid "Refrigerated (2 - 8 °C)"
+msgstr "Refrigerado (2 - 8 °C)"
+
+#. module: specification
+#: model_terms:ir.ui.view,arch_db:specification.spec_sheet_form_view
+msgid "Request"
+msgstr "Solicitar"
+
+#. module: specification
+#: model:ir.model.fields,field_description:specification.field_spec_sheet__activity_user_id
+msgid "Responsible User"
+msgstr "Usuário Responsável"
+
+#. module: specification
+#: model:ir.model.fields,field_description:specification.field_spec_sheet__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr "Erro de entrega de SMS"
+
+#. module: specification
+#: model:ir.model.fields,field_description:specification.field_spec_property__spec_sheet_id
+msgid "Spec Sheet"
+msgstr "Ficha de Especificação"
+
+#. module: specification
+#: model:ir.model.fields,field_description:specification.field_validate_spec_sheet__specification_sheet_id
+#: model_terms:ir.ui.view,arch_db:specification.spec_sheet_tree_view
+msgid "Specification Sheet"
+msgstr "Ficha de Especificação"
+
+#. module: specification
+#: model:ir.ui.menu,name:specification.spec_sheet_menu
+msgid "Specification Sheets"
+msgstr "Fichas de Especificação"
+
+#. module: specification
+#: model:ir.actions.act_window,name:specification.action_specification
+#: model:ir.ui.menu,name:specification.specifications_root
+msgid "Specifications"
+msgstr "Especificações"
+
+#. module: specification
+#: model:ir.model.fields,field_description:specification.field_spec_sheet__status
+msgid "Status"
+msgstr "Estágio"
+
+#. module: specification
+#: model:ir.model.fields,help:specification.field_spec_sheet__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr "Status baseado em atividades\nAtrasado: a data de vencimento já passou\nHoje: a data da atividade é hoje\nPlanejada: atividades futuras."
+
+#. module: specification
+#: model_terms:ir.ui.view,arch_db:specification.spec_sheet_form_view
+msgid "Storage"
+msgstr "Armazenamento"
+
+#. module: specification
+#: model:ir.model.fields,field_description:specification.field_spec_sheet__storage_packaging
+msgid "Storage Packaging"
+msgstr "Embalagens de armazenamento"
+
+#. module: specification
+#: model:ir.model.fields,field_description:specification.field_spec_sheet__storage_condition
+msgid "Storage condition"
+msgstr "Condição de armazenamento"
+
+#. module: specification
+#: model:ir.model.fields,field_description:specification.field_spec_property__parameter_target_value
+msgid "Target"
+msgstr "Alvo"
+
+#. module: specification
+#: model:ir.model.fields,field_description:specification.field_spec_sheet__technical_name
+msgid "Technical Name"
+msgstr "Nome Técnico"
+
+#. module: specification
+#: model:ir.model,name:specification.model_spec_sheet
+msgid "Technical Specification of the Product"
+msgstr "Especificação Técnica do Produto"
+
+#. module: specification
+#: model:ir.model,name:specification.model_spec_properties_template
+msgid "Templates for specification parameters"
+msgstr "Modelos para parâmetros de especificação"
+
+#. module: specification
+#: model:ir.model,name:specification.model_spec_method
+msgid "Test method for give parameter"
+msgstr "Método de teste para fornecer parâmetro"
+
+#. module: specification
+#: model:ir.model.fields,help:specification.field_spec_parameter__note
+msgid "This note will be added to the end of the CoA"
+msgstr "Esta nota será adicionada ao final do CoA"
+
+#. module: specification
+#: model:ir.model.fields,field_description:specification.field_spec_property__parameter_tolerance_value
+msgid "Tolerance"
+msgstr "Tolerância"
+
+#. module: specification
+#: model:ir.model.fields,field_description:specification.field_spec_sheet__specification_type
+msgid "Type"
+msgstr "Tipo"
+
+#. module: specification
+#: model:ir.model.fields,help:specification.field_spec_sheet__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr "Tipo de atividade de exceção registrada."
+
+#. module: specification
+#: model:ir.model.fields,field_description:specification.field_spec_property__uom_id
+msgid "Uom"
+msgstr "UdM"
+
+#. module: specification
+#: model:ir.model.fields,field_description:specification.field_spec_parameter__uom_category_id
+msgid "Uom Category"
+msgstr "Categoria UdM"
+
+#. module: specification
+#: model_terms:ir.ui.view,arch_db:specification.spec_sheet_form_view
+msgid "Validate"
+msgstr "Validar"
+
+#. module: specification
+#: model:ir.model.fields.selection,name:specification.selection__spec_sheet__status__validated
+#: model_terms:ir.ui.view,arch_db:specification.spec_sheet_form_view
+msgid "Validated"
+msgstr "Validado"
+
+#. module: specification
+#: model:ir.actions.act_window,name:specification.action_validate_spec_sheet
+msgid "Validation"
+msgstr "Validação"
+
+#. module: specification
+#: model:ir.model,name:specification.model_validate_spec_sheet
+msgid "Validation of specification sheet"
+msgstr "Validação da ficha de especificação"
+
+#. module: specification
+#: model_terms:ir.ui.view,arch_db:specification.spec_sheet_form_view
+msgid "Value"
+msgstr "Valor"
+
+#. module: specification
+#: model:ir.model.fields,field_description:specification.field_spec_sheet__version
+msgid "Version"
+msgstr "Versão"
+
+#. module: specification
+#: model:ir.model.fields,field_description:specification.field_spec_sheet__website_message_ids
+msgid "Website Messages"
+msgstr "Mensagens do Site"
+
+#. module: specification
+#: model:ir.model.fields,help:specification.field_spec_sheet__website_message_ids
+msgid "Website communication history"
+msgstr "Histórico de comunicação do site"
+
+#. module: specification
+#: model_terms:ir.ui.view,arch_db:specification.spec_sheet_form_view
+msgid "unit of measurement"
+msgstr "unidade de medida"
+
