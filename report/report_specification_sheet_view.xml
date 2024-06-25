@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <!-- Report action for creating the menu in the record form view -->
+        <record id="action_report_specification_sheet" model="ir.actions.report">
+            <field name="name">Product Specification Sheet</field>
+            <field name="model">spec.sheet</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">specification.report_spec_sheet</field>
+            <field name="report_file">specification.report_spec_sheet</field>
+            <field name="binding_model_id" ref="specification.model_spec_sheet"></field>
+            <field name="binding_type">report</field>
+        </record>
+    </data>
+</odoo>

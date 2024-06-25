@@ -15,6 +15,8 @@
         'views/specification_parameter_tree_view.xml',
         'views/specification_sheet_tree_view.xml',
         'views/specification_sheet_form_view.xml',
+        'report/report_specification_sheet_template.xml',
+        'report/report_specification_sheet_view.xml',
     ],
     'installable': True,
     'application': True,

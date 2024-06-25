@@ -10,11 +10,16 @@
                     <button name="request_validation" string="Request" type="object"
                         class="oe_highlight" />
                     <button name="%(specification.action_validate_spec_sheet)d" string="Validate"
-                        type="action" />
+                        type="action" icon="fa-check-square-o"/>
+                    <button name="cancel_specification" string="Cancel" type="object"
+                        class="btn-danger" icon="fa-ban" />
                     <field name="status" widget="statusbar"
                         statusbar_visible="draft,pending,validated,canceled" />
                 </header>
                 <sheet>
+                    <widget name="web_ribbon" title="Validated" invisible="status != 'validated'" />
+                    <widget name="web_ribbon" title="Canceled" bg_color="text-bg-danger"
+                        invisible="status != 'canceled'" />
                     <div class="oe_title">
                         <h1>
                             <field name="product_id" />
@@ -50,12 +55,13 @@
                                         decoration-muted="1" />
                                     <field name="uom_id" invisible="operator == 'characteristic'" />
                                 </tree>
+
                                 <!-- Add property pop-up -->
                                 <form>
                                     <group>
                                         <group>
-                                            <field name="parameter_id" required="1"/>
-                                            <field name="operator" required="1"/>
+                                            <field name="parameter_id" required="1" />
+                                            <field name="operator" required="1" />
                                         </group>
                                         <group>
                                             <field name="parameter_target_value"
