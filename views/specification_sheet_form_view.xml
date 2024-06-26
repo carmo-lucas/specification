@@ -10,7 +10,7 @@
                     <button name="request_validation" string="Request" type="object"
                         class="oe_highlight" />
                     <button name="%(specification.action_validate_spec_sheet)d" string="Validate"
-                        type="action" icon="fa-check-square-o"/>
+                        type="action" class="btn-success" icon="fa-check-square-o"/>
                     <button name="cancel_specification" string="Cancel" type="object"
                         class="btn-danger" icon="fa-ban" />
                     <field name="status" widget="statusbar"
@@ -46,6 +46,7 @@
                                 <!-- Allows adding new rows without opening a form -->
                                 <tree>
                                     <field name="parameter_id" />
+                                    <field name="parameter_method"/>
                                     <field name="operator" />
                                     <field name="parameter_target_value"
                                         invisible="operator == 'characteristic'" />
@@ -55,12 +56,12 @@
                                         decoration-muted="1" />
                                     <field name="uom_id" invisible="operator == 'characteristic'" />
                                 </tree>
-
                                 <!-- Add property pop-up -->
                                 <form>
                                     <group>
                                         <group>
                                             <field name="parameter_id" required="1" />
+                                            <field name="parameter_method" required="1" />
                                             <field name="operator" required="1" />
                                         </group>
                                         <group>
