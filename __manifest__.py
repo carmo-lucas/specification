@@ -13,6 +13,7 @@
         'views/specification_main.xml',
         'views/specification_parameter_form_view.xml',
         'views/specification_parameter_tree_view.xml',
+        'views/specification_method_tree_view.xml',
         'views/specification_sheet_tree_view.xml',
         'views/specification_sheet_form_view.xml',
         'report/report_specification_sheet_template.xml',

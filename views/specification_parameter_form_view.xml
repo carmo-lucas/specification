@@ -10,7 +10,6 @@
                     <field name="name" />
                     <field name="description" />
                     <field name="uom_category_id" />
-                    <field name="method" />
                     <field name="parameter_type" widget="radio"
                     options="{'horizontal': True}" />
                     <field name="note" />

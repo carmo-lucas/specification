@@ -13,5 +13,5 @@ class SpecificationParameter(models.Model):
             ("qualitative", "Qualitative"),
         ]
     )
-    method = fields.Text("Method Used")
+    # method = fields.Text("Method Used")
     note = fields.Text(help = "This note will be added to the end of the CoA")

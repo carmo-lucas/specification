@@ -27,6 +27,19 @@
         </field>
     </record>
 
+    <!-- Definition of an action for opening the configuration parameters view -->
+    <record id="action_configuration_methods" model="ir.actions.act_window">
+        <field name="name">Methods</field>
+        <field name="res_model">spec.method</field>
+        <field name="view_mode">tree,form</field>
+        <!-- Help message to be displayed in the view -->
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Configure Analysis Methods
+            </p>
+        </field>
+    </record>
+
     <!-- Main menu for the module -->
     <!-- Level 0 Root Menu Button -->
     <menuitem name="Specifications" id="specifications_root" sequence="3" />
@@ -52,4 +65,10 @@
         id="spec_configuration_parameters"
         parent="spec_configuration_menu"
         action="action_configuration_parameters" />
+
+    <menuitem
+        name="Methods"
+        id="spec_configuration_methods"
+        parent="spec_configuration_menu"
+        action="action_configuration_methods" />
 </odoo>

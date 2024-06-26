@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="spec_method_tree_view" model="ir.ui.view">
+        <field name="name">spec.method.tree</field>
+        <field name="model">spec.method</field>
+        <field name="arch" type="xml">
+            <tree string="Methods">
+                <!-- Fields to be displayed in the tree view -->
+                <field name="parameter_id" />
+                <field name="name" />
+                <field name="reference" />
+            </tree>
+        </field>
+    </record>
+</odoo>

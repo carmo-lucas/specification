@@ -9,7 +9,6 @@
                 <!-- Fields to be displayed in the tree view -->
                 <field name="name" />
                 <field name="uom_category_id" />
-                <field name="method" />
             </tree>
         </field>
     </record>
