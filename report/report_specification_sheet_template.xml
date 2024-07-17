@@ -4,54 +4,104 @@
         <template id="report_spec_sheet">
             <t t-call="web.html_container">
                 <t t-foreach="docs" t-as="o">
-                    <t t-call="web.external_layout">
+                    <t t-call="web.internal_layout">
                         <div class="page">
-                            <h2>Product Specification Sheet</h2>
-                            <span t-field="o.product_id" /> V: <span
-                                t-field="o.version" />
-                                <p t-field="o.technical_name"></p>
-                                <p
-                                t-field="o.description"></p>
-                                <p t-field="o.storage_condition"></p>
-                                <p
-                                t-field="o.storage_packaging"></p>
-                            <t t-if="o.property_ids">
-                                <h4>Properties</h4>
-                                <table class="table table-condensed" name="property">
-                                    <thead>
-                                        <tr>
-                                            <th name="th_parameter" class="text-start">
-                                                <span>Parameter</span>
-                                            </th>
-                                            <th name="th_method" class="text-start">
-                                                <span>Method</span>
-                                            </th>
-                                            <th name="th_acceptance_value" class="text-end">
-                                                <span>Acceptance Value</span>
-                                            </th>
-                                            <th name="th_uom" class="text-start">
-                                                <span>UoM</span>
-                                            </th>
-                                        </tr>
-                                    </thead>
-                                    <t t-foreach="o.property_ids" t-as="line">
-                                        <tr>
-                                            <td class="text-start">
-                                                <span t-field="line.parameter_id"></span>
-                                            </td>
-                                            <td class="text-start">
-                                                <span t-field="line.parameter_method"></span>
-                                            </td>
-                                            <td class="text-end">
-                                                <span t-field="line.parameter_range_value"></span>
-                                            </td>
-                                            <td class="text-start">
-                                                <span t-field="line.uom_id"></span>
-                                            </td>
-                                        </tr>
-                                    </t>
-                                </table>
-                            </t>
+                            <div class="oe_structure" />
+                            <div class="row" id="product-name">
+                                <div class="col-auto">
+                                    <h2>
+                                        <span t-field="o.product_id" />
+                                    </h2>
+                                </div>
+                            </div>
+                            <h4>
+                                Product Identification
+                            </h4>
+                            <div class="container" id="product-identification">
+                                <div class="row">
+                                    <div class="col-4"> DCB <br />
+                                        <span t-field="o.dcb_name" />
+                                    </div>
+                                    <div class="col-4"> DCI <br />
+                                        <span t-field="o.dci_name" />
+                                    </div>
+                                    <div class="col-4"> CAS <br />
+                                        <span t-field="o.cas_name" />
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <span>Description</span>
+                                    <br />
+                                    <span t-field="o.description" />
+                                </div>
+                            </div>
+                            <hr />
+                            <div id="storage-instructions">
+                                <h4>Storage Instructions</h4>
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <strong>Storage Condition</strong>
+                                        </div>
+                                        <div class="col-6">
+                                            <strong>Packaging</strong>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <span t-field="o.storage_condition" />
+                                        </div>
+                                        <div class="col-6">
+                                            <span t-field="o.storage_packaging" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr />
+                            <div id="properties">
+                                <t t-if="o.property_ids">
+                                    <h4>Properties</h4>
+                                    <table class="table table-condensed" name="property">
+                                        <thead>
+                                            <tr>
+                                                <th name="th_parameter" class="text-start">
+                                                    <span>Parameter</span>
+                                                </th>
+                                                <th name="th_method" class="text-start">
+                                                    <span>Method</span>
+                                                </th>
+                                                <th name="th_reference_value" class="text-end">
+                                                    <span>Reference Value</span>
+                                                </th>
+                                                <th name="th_uom" class="text-start">
+                                                    <span>UoM</span>
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <t t-foreach="o.property_ids" t-as="line">
+                                            <tr>
+                                                <td class="text-start">
+                                                    <span t-field="line.parameter_id"></span>
+                                                </td>
+                                                <td class="text-start">
+                                                    <span t-field="line.parameter_method"></span>
+                                                </td>
+                                                <td class="text-end">
+                                                    <span t-field="line.parameter_range_value"></span>
+                                                </td>
+                                                <td class="text-start">
+                                                    <span t-field="line.uom_id"></span>
+                                                </td>
+                                            </tr>
+                                        </t>
+                                    </table>
+                                </t>
+                            </div>
+                            <p class="text-center">
+                                This document was generated by a
+                                validated system and does not
+                                require a signature.
+                            </p>
                         </div>
                     </t>
                 </t>

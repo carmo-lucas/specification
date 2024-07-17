@@ -10,7 +10,7 @@ class SpecificationProperty(models.Model):
     parameter_target_value = fields.Float("Target", digits=(12, 4))
     parameter_tolerance_value = fields.Float("Tolerance", digits=(12, 4))
     parameter_range_value = fields.Char(
-        string="Acceptance Value",
+        string="Reference Value",
         compute="_compute_value_range",
         inverse="_set_value_range",
         store=True,

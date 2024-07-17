@@ -10,7 +10,7 @@
                     <button name="request_validation" string="Request" type="object"
                         class="oe_highlight" />
                     <button name="%(specification.action_validate_spec_sheet)d" string="Validate"
-                        type="action" class="btn-success" icon="fa-check-square-o"/>
+                        type="action" class="btn-success" icon="fa-check-square-o" />
                     <button name="cancel_specification" string="Cancel" type="object"
                         class="btn-danger" icon="fa-ban" />
                     <field name="status" widget="statusbar"
@@ -22,7 +22,7 @@
                         invisible="status != 'canceled'" />
                     <div class="oe_title">
                         <h1>
-                            <field name="product_id" />
+                            <field name="product_id" default_focus="1"/>
                         </h1>
                     </div>
                     <!-- Fields to be displayed in the form -->
@@ -30,7 +30,8 @@
                         <group string="General Information">
                             <field name="specification_type" widget="radio"
                                 options="{'horizontal': True}" />
-                            <field name="technical_name" />
+                            <field name="dcb_name" />
+                            <field name="dci_name" />
                             <field name="description" />
                         </group>
                         <group string="Storage">
@@ -46,7 +47,7 @@
                                 <!-- Allows adding new rows without opening a form -->
                                 <tree>
                                     <field name="parameter_id" />
-                                    <field name="parameter_method"/>
+                                    <field name="parameter_method" />
                                     <field name="operator" />
                                     <field name="parameter_target_value"
                                         invisible="operator == 'characteristic'" />

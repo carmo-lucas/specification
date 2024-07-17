@@ -20,9 +20,9 @@ class SpecificationSheet(models.Model):
     )
     # Version Control
     version  = fields.Integer("Version", default = 1, tracking = True)
-    
+    # user_approved = fields.Many2one("res.user")
+    # date_approved = fields.Datetime("Date of Approval")
     product_id = fields.Many2one("product.product")
-    technical_name = fields.Text("Technical Name")
     description = fields.Text(string="Description")
     specification_type = fields.Selection(
         string="Type",
@@ -48,7 +48,9 @@ class SpecificationSheet(models.Model):
     storage_packaging = fields.Text(string="Storage Packaging")
 
     # Chemical Specifications
-    cas_name = fields.Char("CAS", size=20, trim=False)
+    dcb_name = fields.Char("DCB", size=128, trim=False)
+    dci_name = fields.Char("DCI", size=128, trim=False)
+    cas_name = fields.Char("CAS", size=64, trim=False)
     molecular_weight = fields.Float("Mw")
 
     # Pharmaceutical Specifications
