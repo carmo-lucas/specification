@@ -20,9 +20,13 @@
                     <widget name="web_ribbon" title="Validated" invisible="status != 'validated'" />
                     <widget name="web_ribbon" title="Canceled" bg_color="text-bg-danger"
                         invisible="status != 'canceled'" />
-                    <div class="oe_title">
+                    <div>
                         <h1>
-                            <field name="product_id" default_focus="1"/>
+                            <div>
+                                <field name="product_id" default_focus="1" />
+                            </div>
+                            <div> V. <field name="version" readonly="1" />
+                            </div>
                         </h1>
                     </div>
                     <!-- Fields to be displayed in the form -->
@@ -30,12 +34,10 @@
                         <group string="General Information">
                             <field name="specification_type" widget="radio"
                                 options="{'horizontal': True}" />
-                            <field name="dcb_name" />
-                            <field name="dci_name" />
                             <field name="description" />
                         </group>
                         <group string="Storage">
-                            <field name="storage_condition" widget="radio"></field>
+                            <field name="storage_condition"></field>
                             <field name="storage_packaging"></field>
                         </group>
                     </group>
@@ -82,6 +84,8 @@
                         </page>
                         <page string="Pharmaceutical" invisible="specification_type != 'pharma'">
                             <group>
+                                <field name="dcb_name" />
+                                <field name="dci_name" />
                                 <field name="cas_name" />
                                 <field name="bcs" />
                                 <field name="classe_SNGPC" />
@@ -95,13 +99,21 @@
                         </page>
                         <page string="Chemical" invisible="specification_type != 'chemical'">
                             <group>
+                                <field name="dcb_name" />
+                                <field name="dci_name" />
                                 <field name="cas_name" />
+                                <field name="molecular_weight" />
                             </group>
                         </page>
                         <page string="Physical" invisible="specification_type != 'physical'">
                             <group>
-                                <h1>Physical properties to be added like, packaging drawing
-                                    and material type</h1>
+                                <p>
+                                    Physical properties to be added like, packaging drawing
+                                    and material type
+                                </p>
+                                <p>
+                                    Dimensions of the product
+                                </p>
                             </group>
                         </page>
                     </notebook>

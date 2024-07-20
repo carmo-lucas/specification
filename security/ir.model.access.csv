@@ -5,3 +5,4 @@ specification.access_spec_method,access_spec_method,specification.model_spec_met
 specification.access_spec_parameter,access_spec_parameter,specification.model_spec_parameter,base.group_user,1,1,1,1
 specification.access_spec_properties_template,access_spec_properties_template,specification.model_spec_properties_template,base.group_user,1,1,1,1
 specification.access_spec_property,access_spec_property,specification.model_spec_property,base.group_user,1,1,1,1
+specification.access_spec_storage_condition,access_spec_storage_condition,specification.model_spec_storage_condition,base.group_user,1,1,1,1

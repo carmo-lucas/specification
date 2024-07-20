@@ -19,9 +19,10 @@ class SpecificationSheet(models.Model):
         tracking=True,
     )
     # Version Control
-    version  = fields.Integer("Version", default = 1, tracking = True)
-    # user_approved = fields.Many2one("res.user")
-    # date_approved = fields.Datetime("Date of Approval")
+    version = fields.Integer("Version", default=1, tracking=True)
+    user_approved = fields.Many2one("res.users")
+    date_approved = fields.Datetime("Date of Approval")
+    
     product_id = fields.Many2one("product.product")
     description = fields.Text(string="Description")
     specification_type = fields.Selection(
@@ -30,27 +31,19 @@ class SpecificationSheet(models.Model):
             ("chemical", "Chemical"),
             ("physical", "Physical"),
             ("pharma", "Pharmaceutical"),
+            ("vegetable", "Vegetable"),
         ],
         required=True,
         default="chemical",
     )
-    storage_condition = fields.Selection(
-        string="Storage condition",
-        selection=[
-            ("cool", "Refrigerated (2 - 8 °C)"),
-            ("controlled", "Ambient (15 - 20 °C)"),
-            ("room", "Ambient (< 30 °C)"),
-        ],
-        default="controlled",
-        required=True
-    )
+    storage_condition = fields.Many2one("spec.storage_condition", required=True)
 
     storage_packaging = fields.Text(string="Storage Packaging")
 
     # Chemical Specifications
-    dcb_name = fields.Char("DCB", size=128, trim=False)
-    dci_name = fields.Char("DCI", size=128, trim=False)
-    cas_name = fields.Char("CAS", size=64, trim=False)
+    dcb_name = fields.Char("DCB", size=255, trim=False)
+    dci_name = fields.Char("DCI", size=255, trim=False)
+    cas_name = fields.Char("CAS", size=255, trim=False)
     molecular_weight = fields.Float("Mw")
 
     # Pharmaceutical Specifications
@@ -78,4 +71,3 @@ class SpecificationSheet(models.Model):
 
     def cancel_specification(self):
         self.status = "canceled"
-
