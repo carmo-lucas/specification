@@ -1,6 +1,7 @@
 from odoo import fields, models, api, _
 from markupsafe import Markup
 from odoo.exceptions import UserError, AccessDenied
+from datetime import datetime
 
 
 class ValidateSpecificationSheet(models.TransientModel):
@@ -36,4 +37,6 @@ class ValidateSpecificationSheet(models.TransientModel):
                 )
             )
             rec.status = "validated"
+            rec.user_approved = self.env.user
+            rec.date_approved = datetime.now()
             return {"type": "ir.actions.act_window_close"}

@@ -5,15 +5,17 @@
         <field name="model">spec.parameter</field>
         <field name="arch" type="xml">
             <form string="Parameters">
-                <!-- Fields to be displayed in the tree view -->
-                <group>
-                    <field name="name" />
-                    <field name="description" />
-                    <field name="uom_category_id" />
-                    <field name="parameter_type" widget="radio"
-                    options="{'horizontal': True}" />
-                    <field name="note" />
-                </group>
+                <sheet>
+                    <!-- Fields to be displayed in the form view -->
+                    <group>
+                        <field name="name" />
+                        <field name="description" />
+                        <field name="uom_category_id" />
+                        <field name="parameter_type" widget="radio"
+                            options="{'horizontal': True}" />
+                        <field name="note" />
+                    </group>
+                </sheet>
             </form>
         </field>
     </record>

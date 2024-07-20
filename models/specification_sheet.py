@@ -71,3 +71,4 @@ class SpecificationSheet(models.Model):
 
     def cancel_specification(self):
         self.status = "canceled"
+        self.user_approved = None
