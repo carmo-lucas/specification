@@ -21,12 +21,10 @@
                     <widget name="web_ribbon" title="Canceled" bg_color="text-bg-danger"
                         invisible="status != 'canceled'" />
                     <div>
-                        <h1>
-                            <div>
-                                <field name="product_id" default_focus="1" />
-                            </div>
-                            <div> V. <field name="version" readonly="1" />
-                            </div>
+                        <h1 class="d-flex w-75">
+                            <field name="product_id" default_focus="1" class="flex-grow-1" /> V.<field
+                                name="version"
+                                readonly="1" />
                         </h1>
                     </div>
                     <!-- Fields to be displayed in the form -->
@@ -73,7 +71,8 @@
                                             <field name="parameter_tolerance_value"
                                                 invisible="operator == 'characteristic'" />
                                             <field string="Value" name="parameter_range_value"
-                                                class="oe_inline" />
+                                                class="oe_inline"
+                                                readonly="operator != 'characteristic'" />
                                             <field name="uom_id"
                                                 invisible="operator == 'characteristic'"
                                                 placeholder="unit of measurement" class="oe_inline" />
